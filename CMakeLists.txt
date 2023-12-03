@@ -201,6 +201,8 @@ if(USE_INTELCPU)
   list (APPEND SRC ${SRC_INTELCPU})
 endif()
 
+add_subdirectory(include)
+add_subdirectory(python)
 # Libraries
 if(WIN32)
   add_library(InfiniTensor STATIC ${SRC})
