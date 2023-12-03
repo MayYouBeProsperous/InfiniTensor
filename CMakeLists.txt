@@ -55,7 +55,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_EXTENSIONS OFF) # -std=gnu++11 when on, -std=c++11 when off
 
 find_package(
-  Python
+  Python 3.10
   COMPONENTS Interpreter Development
   REQUIRED)
 
