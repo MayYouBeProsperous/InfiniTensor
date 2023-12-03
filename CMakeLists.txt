@@ -226,7 +226,7 @@ if(WIN32)
 else()
   pybind11_add_module(backend MODULE ${FFIS})
 endif()
-target_link_libraries(backend PRIVATE InfiniTensor)
+# target_link_libraries(backend PRIVATE InfiniTensor)
 
 if(USE_BACKTRACE)
   add_definitions(-D BACKWARD_TRACE)
