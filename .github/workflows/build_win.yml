@@ -42,6 +42,7 @@ jobs:
     - name: Install python-frontend
       shell: cmd
       run: |
+        python --version
         python -m pip install --upgrade pip
         pip install -e pyinfinitensor
         python -c "import pyinfinitensor" 
