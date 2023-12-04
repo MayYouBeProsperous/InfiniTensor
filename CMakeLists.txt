@@ -8,7 +8,6 @@ option(USE_PROTOBUF "Serialize and deserialize tensors" OFF)
 option(BUILD_NNET "Build nnet" OFF)
 option(BUILD_DIST "Build project for distributed running" OFF)
 option(BUILD_TEST "Build tests" OFF)
-option(PY_VERSION "Compile with python3 support" ${PY_VERSION})
 
 if(USE_CUDA)
     message("CMake 3.18 or higher is required for setting CUDAToolkit")
@@ -88,12 +87,6 @@ if(USE_PROTOBUF)
   add_library(tensor_proto SHARED ${PROTO_SRCS} ${PROTO_HDRS})
   target_link_libraries(tensor_proto PUBLIC ${PROTOBUF_LIBRARIES})
 endif()
-
-# if(PY_VERSION)
-#   set(PYBIND11_PYTHON_VERSION ${PY_VERSION})
-# endif()
-set(PY_VERSION 3.10)
-set(PYBIND11_PYTHON_VERSION ${PY_VERSION})
 
 include_directories(include)
 # Pybind11
