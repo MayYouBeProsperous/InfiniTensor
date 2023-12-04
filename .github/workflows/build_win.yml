@@ -18,10 +18,10 @@ jobs:
       with:
         submodules: recursive
 
-    - name: Set up Python 3.12
+    - name: Set up Python 3.10
       uses: actions/setup-python@v4
       with:
-        python-version: '3.12' 
+        python-version: '3.10' 
     
     - name: Build
       shell: cmd
@@ -34,7 +34,7 @@ jobs:
       run: |
         mkdir build && cd build
         call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-        cmake .. -G "NMake Makefiles" -DUSE_BACKTRACE=OFF -DBUILD_TEST=ON -DCMAKE_BUILD_TYPE=Release
+        cmake .. -G "NMake Makefiles" -DPY_VERSION=3.10 -DUSE_BACKTRACE=OFF -DBUILD_TEST=ON -DCMAKE_BUILD_TYPE=Release
         nmake
         copy backend*.pyd ..\pyinfinitensor\src\pyinfinitensor\backend.pyd
     
