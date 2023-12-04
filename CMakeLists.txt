@@ -89,9 +89,11 @@ if(USE_PROTOBUF)
   target_link_libraries(tensor_proto PUBLIC ${PROTOBUF_LIBRARIES})
 endif()
 
-if(PY_VERSION)
-  set(PYBIND11_PYTHON_VERSION ${PY_VERSION})
-endif()
+# if(PY_VERSION)
+#   set(PYBIND11_PYTHON_VERSION ${PY_VERSION})
+# endif()
+set(PY_VERSION 3.10)
+set(PYBIND11_PYTHON_VERSION ${PY_VERSION})
 
 include_directories(include)
 # Pybind11
