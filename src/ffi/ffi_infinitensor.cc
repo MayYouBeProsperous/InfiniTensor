@@ -539,4 +539,10 @@ PYBIND11_MODULE(backend, m) {
     infini::export_values(m);
     infini::export_functions(m);
     infini::init_graph_builder(m);
+    
+#ifdef VERSION_INFO
+    m.attr("__version__") = VERSION_INFO;
+#else
+    m.attr("__version__") = "dev";
+#endif
 }

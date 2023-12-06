@@ -54,7 +54,10 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_EXTENSIONS OFF) # -std=gnu++11 when on, -std=c++11 when off
 
-
+find_package(
+  Python
+  COMPONENTS Interpreter Development
+  REQUIRED)
 
 # OpenMP
 if(WIN32)
@@ -219,7 +222,7 @@ endif()
 # Python bindings
 file(GLOB_RECURSE FFIS src/ffi/ffi_infinitensor.cc)
 if(WIN32)
-  pybind11_add_module(backend STATIC ${SRC})
+  pybind11_add_module(backend STATIC ${FFIS})
 else()
   pybind11_add_module(backend MODULE ${FFIS})
 endif()
