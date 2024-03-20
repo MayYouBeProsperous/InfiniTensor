@@ -26,6 +26,7 @@ jobs:
     - name: Build
       shell: cmd
       run: |
+        call "cmake --version"
         mkdir build && cd build
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
         cmake .. -G "NMake Makefiles" -DUSE_BACKTRACE=OFF -DBUILD_TEST=ON -DCMAKE_BUILD_TYPE=Release
