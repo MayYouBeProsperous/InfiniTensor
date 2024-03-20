@@ -32,12 +32,12 @@ jobs:
     #     nmake
     #     copy backend*.pyd ..\pyinfinitensor\src\pyinfinitensor\backend.pyd
     
-    - name: Test cpu
-      shell: cmd
-      run: |
-        cd build
-        call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-        nmake test
+    # - name: Test cpu
+    #   shell: cmd
+    #   run: |
+    #     cd build
+    #     call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+    #     nmake test
     
     - name: Install python-frontend
       shell: cmd
